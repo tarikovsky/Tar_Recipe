@@ -1,0 +1,245 @@
+.homeWrapper {
+    position: relative;
+}
+
+
+.home {
+    scroll-snap-type: y mandatory;
+    height: calc(100vh - 150px);
+    width: 100%;
+    top: 0px;
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        width: 15px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #282c31;
+        /* цвет зоны отслеживания */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        width: 10px;
+        background-color: #7a7a7a;
+        /* цвет бегунка */
+        // border-radius: 5px;
+    }
+
+    .banner {
+
+        height: 100%;
+        // &:nth-last-child(2){
+        //     // height: 10px;
+        //     height: calc(100% - 100px);
+        // }
+        scroll-snap-align: start;
+        position: relative;
+        overflow: hidden;
+
+        .photoBanner {
+            margin: auto;
+            height: 100%;
+            transition: transform 0.6s ease;
+            transform: scale(1.1);
+
+            &:hover {
+                transform: translateX(20px) scale(1.1)
+            }
+        }
+
+        .RandomContent {
+            pointer-events: none;
+            right: 0;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+
+            h2 {
+                text-transform: uppercase;
+            }
+
+            .generate {
+                pointer-events: all;
+                cursor: pointer;
+                text-transform: uppercase;
+                margin-top: 20px;
+                font-size: 15px;
+                border: none;
+                padding: 10px;
+                background-color: #fff;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    color: white;
+                    background-color: black;
+                }
+            }
+
+            .meal {
+                margin-top: 20px;
+                width: 300px;
+                min-height: 342px;
+                // max-height: 200px;
+                position: relative;
+                background-color: white;
+                border-radius: 15px;
+                pointer-events: all;
+
+                &.active {
+                    pointer-events: none;
+                    max-height: 200px;
+                }
+
+                .anim {
+                    position: absolute;
+                    width: 120%;
+                    left: 50%;
+                    top: 50%;
+                    z-index: -1;
+                    transform: translate(-50%, -50%);
+                    height: 200px;
+
+                    .stick {
+                        pointer-events: none;
+                        position: absolute;
+                        width: 200px;
+                        z-index: -1;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+
+                    .left {
+                        top: 0;
+                        border-radius: 10px 0 0 10px;
+                        height: 40px;
+                        background-color: rgb(255, 187, 0);
+                        transition: transform 0.2s ease;
+                    }
+
+                    .right {
+                        bottom: 0;
+                        border-radius: 0 10px 10px 0;
+                        height: 30px;
+                        background-color: rgb(255, 187, 0);
+                        transition: transform 0.4s ease;
+                    }
+
+                    .left2 {
+                        top: 50%;
+                        border-radius: 10px 0 0 10px;
+                        height: 30px;
+                        background-color: rgb(183, 0, 255);
+                        transition: transform 0.6s ease;
+                    }
+
+                    .right2 {
+                        bottom: 50%;
+                        border-radius: 0 10px 10px 0;
+                        height: 35px;
+                        background-color: rgb(183, 0, 255);
+                        transition: transform 0.8s ease;
+                    }
+
+                    &.active {
+                        .left {
+                            transform: translateX(-100%);
+                        }
+
+                        .right {
+                            transform: translateX(0%);
+                        }
+
+                        .left2 {
+                            transform: translateX(-120%);
+                        }
+
+                        .right2 {
+                            transform: translateX(20%);
+                        }
+                    }
+                }
+            }
+        }
+
+        .lettersContent {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            pointer-events: none;
+            h2 {
+                position: relative;
+                // margin-left: 400px;
+                // margin-left: 50%;
+                // transform: translateX(50%);
+                left: 0;
+                text-transform: uppercase;
+                // color: white;
+            }
+
+            p {
+                // margin-left: 400px;
+                // font-size: 18px;
+                margin-right: 300px;
+                white-space: pre-wrap;
+            }
+
+            .wrapper {
+                width: 80vw;
+
+                margin-top: 30px;
+                pointer-events: all;
+
+                .list {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(91px, 2fr));
+                    justify-content: space-between;
+                    gap: 50px;
+                    text-transform: uppercase;
+
+                    .link {
+                        text-decoration: none;
+                        color: rgb(255, 255, 255);
+                    }
+
+                    .letter {
+                        // border: 5px solid white;
+                        cursor: pointer;
+                        padding: 20px 30px;
+                        border-radius: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        .l {
+                            font-size: 35px;
+                            text-align: center;
+                        }
+
+                        transition: transform 0.2s ease-in-out;
+
+                        &:hover {
+                            transform: scale(0.9) rotate(15deg);
+                        }
+                    }
+                }
+            }
+        }
+        .workingContent{
+            position: absolute;
+            left: 50%;
+            top:130px;
+            transform: translateX(-50%);
+            figure{
+                // width: 200px;
+                img{
+                    width: 500px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.app {
+    padding-right: 0px;
+    overflow-x: hidden;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+
+    .content {
+        min-height: calc(100vh - 120px);
+        margin-bottom: 20px;
+
+        .main_content {
+            transition: transform 0.3s ease;
+        }
+
+        .goLeft {
+            transform: translateX(-100px);
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        /* ширина всей полосы прокрутки */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+        /* цвет зоны отслеживания */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #7a7a7a;
+        /* цвет бегунка */
+        border-radius: 5px;
+    }
+
+    background-color: #F3F3F5
+}

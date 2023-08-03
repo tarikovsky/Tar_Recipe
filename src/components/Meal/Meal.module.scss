@@ -1,0 +1,130 @@
+.meal {
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+
+    .title {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .recipe {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        padding-bottom: 30px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 20px;
+
+        .photo {
+            position: relative;
+            border-radius: 50%;
+
+            .favorite {
+                border-radius: 50%;
+                // z-index: 1;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+                background-color: #ffffff;
+                padding: 15px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    background-color: transparent;
+                    width: 20px;
+                    height: 20px;
+                    border: none;
+                    background-image: url(../../../public/images/favorite.svg);
+                    background-repeat: no-repeat;
+                    background-position: 0%;
+                    background-size: 1;
+
+                    &.active{
+                        background-image: url(../../../public/images/favoriteHandle.svg);
+                    }
+                }
+                transition: transform 0.6s ease;
+            }
+
+            img {
+                z-index: 0;
+                border-radius: 50%;
+                width: 400px;
+                transition: border-radius 0.6s ease,
+                    transform 0.3s ease;
+                // transform: scale(1.05);
+                // border-radius: 10px;
+            }
+
+            &:hover {
+                img {
+                    // transform: scale(1.05);
+                    border-radius: 10px;
+                }
+
+                .favorite {
+                    transform: translate(20px, 20px);
+                }
+            }
+        }
+
+        .ingredients {
+            width: 350px;
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 20px 0px 0px 20px;
+            overflow: hidden;
+            li {
+                margin-bottom: 10px;
+
+                .dots {
+                    // overflow: hidden;
+                    // content: '........................................................................';
+                    display: block;
+                    white-space: nowrap;
+                    position: relative;
+                    // bottom: ;
+                }
+
+                .ingredient {
+                    float: left;
+                }
+
+                .measure {
+                    padding: 0 20px 0 5px;
+                    background-color: white;
+                    position: relative;
+                    bottom: 15px;
+                    float: right;
+                }
+            }
+        }
+    }
+
+    .instructions {
+        margin-top: 30px;
+        text-align: justify;
+        line-height: 30px;
+        font-size: 17px;
+        white-space: pre-wrap;
+        line-height: 2;
+    }
+
+    iframe {
+        border-radius: 30px;
+        margin-top: 20px;
+        // margin: auto;
+    }
+}
